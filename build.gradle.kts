@@ -8,8 +8,8 @@ version = "0.1"
 
 
 plugins {
-    id("kotlin2js").version("1.3.31")
-    id("kotlin-dce-js").version("1.3.31")
+    id("kotlin2js") version("1.3.31")
+    id("kotlin-dce-js") version("1.3.31")
 }
 
 repositories {
@@ -29,5 +29,5 @@ tasks.named<Kotlin2JsCompile>("compileKotlin2Js").get()
 
 tasks.named<KotlinJsDce>("runDceKotlinJs").get()
     .dceOptions {
-        this.devMode = !DCE_ENABLED
+        devMode = !DCE_ENABLED
     }
