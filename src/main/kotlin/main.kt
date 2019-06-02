@@ -1,5 +1,4 @@
 
-
 fun main() {
-    println("Yo")
+    debug("Yo")
 }
