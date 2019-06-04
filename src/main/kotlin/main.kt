@@ -3,6 +3,7 @@ import org.w3c.dom.asList
 fun main() {
     debug("Yo")
 
+    println(tmRender(""""{{a"}}"-{{b}}""", mapOf("a\"" to "wut", "b" to 3)))
 
 }
 
