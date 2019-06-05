@@ -1,19 +1,14 @@
-import org.w3c.dom.HTMLDivElement
 import org.w3c.dom.asList
-import kotlin.dom.appendText
+import pl.treksoft.jquery.JQueryAjaxSettings
+import pl.treksoft.jquery.jQuery
 
 fun main() {
     debug("Yo")
 
+    val ajaxSettings = mapOf("url" to "https://reqres.in/api/products/3")
 
-    val first = tmRender("tm-first", mapOf("id" to "firrr"))
-    val second = tmRender("tm-first", mapOf("id" to "seccc"))
-
-    val container = getElemByIdAs<HTMLDivElement>(EasyConst.CONTAINER_ID)
-    container.innerHTML += first
-    container.innerHTML += second
-
-    getElemByIdAs<HTMLDivElement>("firrr").appendText("wuuuuuuuu")
+    val r = jQuery.get(mapToJsObject(ajaxSettings).unsafeCast<JQueryAjaxSettings>())
+    r.then({ data, status, xhr -> println(data.asDynamic().data.id) }) // TODO: safer/nicer cast to model?
 
 }
 

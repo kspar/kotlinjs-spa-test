@@ -14,10 +14,12 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven("https://dl.bintray.com/rjaros/kotlin")
 }
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-js")
+    implementation("pl.treksoft:jquery-kotlin:0.0.4")
     testCompile("junit:junit:4.11")
     testImplementation("org.jetbrains.kotlin:kotlin-test-js")
 }
