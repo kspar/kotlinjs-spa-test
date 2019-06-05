@@ -7,14 +7,6 @@ fun tmRender(templateId: String, data: Map<String, Any>): String =
 
 private fun render(template: String, data: Map<String, Any>): String {
     Mustache.parse(template)
-    return Mustache.render(template, mapToJsObject(data))
+    return Mustache.render(template, mapToJsObject(data).unsafeCast<MustacheContext>())
 }
 
-
-private fun mapToJsObject(map: Map<String, Any>): dynamic {
-    val jsObject = js("{}")
-    map.forEach {
-        jsObject[it.key] = it.value
-    }
-    return jsObject
-}
