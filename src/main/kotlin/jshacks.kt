@@ -1,3 +1,7 @@
+/**
+ * Hacks, formerly known as utilities
+ */
+
 
 @JsName("Object")
 external class JsObject
