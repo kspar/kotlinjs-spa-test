@@ -19,6 +19,7 @@ fun clearContainer() {
 }
 
 
+// TODO: safer cast pls
 // {"data":{"id":4,"name":"aqua sky","year":2003,"color":"#7BC4C4","pantone_value":"14-4811"}}
 data class Resp(val data: RespData)
 data class RespData(val id: Int, val name: String, val year: Int, val color: String,
