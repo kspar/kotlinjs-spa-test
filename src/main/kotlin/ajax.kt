@@ -12,7 +12,7 @@ fun ajaxCall(params: Map<String, Any>): JQueryXHR =
 
 fun getCall(params: Map<String, Any>): JQueryXHR {
     if (params.containsKey("method")) {
-        warn("HTTP method should not be defined here, overriding to GET")
+        warn { "HTTP method should not be defined here, overriding to GET" }
     }
     val adjustedParams = params + Pair("method", "GET")
     return ajaxCall(adjustedParams)

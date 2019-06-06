@@ -3,12 +3,17 @@ import kotlin.js.Date
 private const val DEBUG_PREFIX = "[DEBUG]"
 private const val WARN_PREFIX = "[WARN]"
 
-// TODO: take function instead of String to avoid evaluating messages for log levels that are disabled
+private const val DEBUG_ENABLED = true
+private const val WARN_ENABLED = true
 
-fun debug(msg: String) {
-    println("$DEBUG_PREFIX ${Date().toISOString()}: $msg")
+
+
+fun debug(msgProvider: () -> String) {
+    if (DEBUG_ENABLED)
+        println("$DEBUG_PREFIX ${Date().toISOString()}: ${msgProvider()}")
 }
 
-fun warn(msg: String) {
-    println("$WARN_PREFIX ${Date().toISOString()}: $msg")
+fun warn(msgProvider: () -> String) {
+    if (WARN_ENABLED)
+        println("$WARN_PREFIX ${Date().toISOString()}: ${msgProvider()}")
 }

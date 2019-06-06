@@ -1,7 +1,7 @@
 import org.w3c.dom.asList
 
 fun main() {
-    debug("Yo")
+    debug { "Yo" }
 
     val ajaxSettings = mapOf("url" to "https://reqres.in/api/products/4", "method" to "POST")
 
